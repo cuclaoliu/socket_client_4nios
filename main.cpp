@@ -1,8 +1,10 @@
 #include <iostream>
 #include <netinet/in.h>
 #include <strings.h>
-#include <libnet.h>
 #include <pthread.h>
+#include <cstring>
+#include <arpa/inet.h>
+#include <zconf.h>
 
 using namespace std;
 
@@ -87,10 +89,12 @@ int main(int argc, char* argv[]) {
         cout << "All bytes send" << endl;
     else
         cout << "Only send " << send_size << " bytes" << endl;
+    ::
     cout << "waiting 5s ......" << endl;
     sleep(5);
     delete[] send_buff;
     cout << "Close socket" << endl;
     ::close(sock_id);
+    sleep(5);
     return 0;
 }
